@@ -2,7 +2,7 @@ div{
     width:350px;
     height:200px;
     margin:100px 0px 0px 100px;
-    background-color: green;
+    background-color: pink;
 
 }
 img{
@@ -25,4 +25,11 @@ img{
 @keyframes rotate1{
     from{transform: rotate(0deg);}
     to{transform:rotate(360deg);}
+}
+body{
+    background-image: url(outdoor.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }

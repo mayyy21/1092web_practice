@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title>Simple Drawing Program</title>
+	  <script>
+	  function createCanvas()
+		{
+		   var side = 100;
+		   var tbody = document.getElementById( "tablebody" );
+		   for ( var i = 0; i < side; ++i )
+		   {
+			  var row = document.createElement( "tr" );
+			  for ( var j = 0; j < side; ++j )
+			  {
+				 var cell = document.createElement( "td" );
+				 row.appendChild( cell );
+			  }
+			  tbody.appendChild( row );
+		   }
+		   document.getElementById( "canvas" ).addEventListener(
+			  "mousemove", processMouseMove, false );
+		}
+		function processMouseMove( e )
+		{
+			var x=document.forms;
+			var c1=x[0].c1.value;
+		   if ( e.target.tagName.toLowerCase() == "td" )
+		   {
+			  if ( e.shiftKey )
+			  {
+				 e.target.setAttribute( "style", "background-color:"+c1 );
+			  }
+			  if ( e.ctrlKey )
+			  {
+				 e.target.setAttribute( "style", "red" );
+			  }
+		   }
+		}
+		window.addEventListener( "load", createCanvas, false );
+		
+		</script>
+      <style type = "text/css">
+     #canvas { width: 400px;
+	     border: 1px solid #999999;
+                  border-collapse: collapse }
+     td      { width: 4px; height: 4px; margin: 0px; padding: 0px; }
+     .blue   { background-color: white; }
+     .red    { background-color: red; }
+      </style>
+	  
+      <script src = "draw.js"></script>
+   </head>
+   <body>
+	  <form action ="#">
+		<p>
+			<label>Select Color:
+				<input type="color" name="c1"/>
+			</label>
+		</p>
+	  </form>
+      <table id = "canvas">
+         <caption>Hold <em>Shift</em>  to draw.
+            Hold <em>Ctrl</em> to erase.</caption>
+         <tbody id = "tablebody"></tbody>
+      </table>
+   </body>
+</html>

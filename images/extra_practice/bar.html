@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+      <meta charset = "utf-8">
+      <title>bar</title>
+      <style type = "text/css">
+		
+            
+
+		#box1
+		{
+			border: 1px solid orange;
+			height : 30px;
+			width : 370px;
+		}
+		#box2
+		{
+			height : 30px;
+			width : 0px;
+			margin : -1px;
+			overflow:hidden;
+			border: 1px solid orange;
+			background: -webkit-gradient(
+				linear, left top, right top,
+				color-stop(15%, white), color-stop(50%, yellow),
+				color-stop(75%, orange) );
+			background: -moz-linear-gradient(
+				left, white 15%, yellow 50%, orange 75% );
+			background: linear-gradient(
+				left, white 15%, yellow 50%, orange 75% );
+			-webkit-transition: all 4s ease;
+            -moz-transition: all 4s ease;
+            -o-transition: all 4s ease;
+            transition: all 4s ease;
+			
+		}
+		#box1:hover #box2 {
+		   width:370px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+			   <p> 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%</p>
+			</div>
+		</div>
+	</body>
+</html>
